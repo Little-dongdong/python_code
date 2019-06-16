@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ef3bef0-501b-4a9c-875b-5cae79052011" name="默认更改列表" comment="" />
+    <list default="true" id="5ef3bef0-501b-4a9c-875b-5cae79052011" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/../扫雷/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../扫雷/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../扫雷/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../扫雷/.idea/扫雷.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/Minesweeper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/BG/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/BG/background_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../扫雷/ui/num_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/生成数据.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/生成数据.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,21 +33,20 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mpl_squares.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/rw_visual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state>
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -48,6 +71,9 @@
       <replace>y</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/scatter_squares.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/random_walk.py" root0="SKIP_INSPECTION" />
@@ -70,6 +96,7 @@
     <option name="width" value="980" />
     <option name="height" value="975" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -77,8 +104,9 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../alian_invasion" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -201,6 +229,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -238,20 +267,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rw_visual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mpl_squares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rw_visual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
