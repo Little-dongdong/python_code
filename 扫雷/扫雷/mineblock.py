@@ -1,9 +1,10 @@
 import random
-from enum import Enum
+from enum import Enum  # 引入枚举类型
 
-BLOCK_WIDTH = 30
-BLOCK_HEIGHT = 16
-SIZE = 20           # 块大小
+"""相关参数"""
+BLOCK_WIDTH = 30    # 横向块数
+BLOCK_HEIGHT = 16   # 纵向块数
+SIZE = 20           # 块大小(像素点)
 MINE_COUNT = 99    # 地雷数
 
 
