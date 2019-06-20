@@ -5,7 +5,7 @@ from enum import Enum  # 引入枚举类型
 BLOCK_WIDTH = 30    # 横向块数
 BLOCK_HEIGHT = 16   # 纵向块数
 SIZE = 20           # 块大小(像素点)
-MINE_COUNT = 99    # 地雷数
+MINE_COUNT = 2    # 地雷数
 
 
 class BlockStatus(Enum):
@@ -22,7 +22,7 @@ class BlockStatus(Enum):
 
 class Mine:
     """初始化地雷"""
-    """对x,y,value,around_mine_count,status设置属性"""
+    """对x, y, value, around_mine_count, status设置属性"""
     def __init__(self, x, y, value=0):
         self._x = x
         self._y = y
@@ -33,7 +33,6 @@ class Mine:
 
     def __repr__(self):
         return str(self._value)
-        # return f'({self._x},{self._y})={self._value}, status={self.status}'
 
     def get_x(self):
         return self._x
@@ -41,6 +40,7 @@ class Mine:
     def set_x(self, x):
         self._x = x
 
+    """property()在新式类中返回属性值"""
     x = property(fget=get_x, fset=set_x)
 
     def get_y(self):
@@ -94,7 +94,7 @@ class MineBlock:
 
     block = property(fget=get_block)
 
-    def getmine(self, x, y):
+    def get_mine(self, x, y):
         return self._block[y][x]
 
     def open_mine(self, x, y):
@@ -136,6 +136,7 @@ class MineBlock:
         for i, j in around:
             if self._block[j][i].status == BlockStatus.flag:
                 sumflag += 1
+
         # 周边的雷已经全部被标记
         result = True
         if sumflag == self._block[y][x].around_mine_count:
@@ -160,5 +161,6 @@ class MineBlock:
 def _get_around(x, y):
     """返回(x, y)周围的点的坐标"""
     # 这里注意，range 末尾是开区间，所以要加 1
+    # 特殊处理是为了照顾边缘的方块
     return [(i, j) for i in range(max(0, x - 1), min(BLOCK_WIDTH - 1, x + 1) + 1)
             for j in range(max(0, y - 1), min(BLOCK_HEIGHT - 1, y + 1) + 1) if i != x or j != y]

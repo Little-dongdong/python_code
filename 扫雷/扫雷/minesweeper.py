@@ -20,8 +20,8 @@ class GameStatus(Enum):
     win = 4  # 胜利
 
 
-def print_text(screen, font, x, y, text, fcolor=(255, 255, 255)):
-    imgText = font.render(text, True, fcolor)
+def print_text(screen, font, x, y, text, fcolor=(255, 255, 255)):   #(255, 255, 255)白色
+    imgText = font.render(text, True, fcolor)   # render(text, antialias, color, background=None) -> Surface
     screen.blit(imgText, (x, y))
 
 
@@ -34,7 +34,7 @@ def main():
     pygame.display.set_caption('扫雷')
 
     font1 = pygame.font.Font('resources/a.TTF', SIZE * 2)  # 得分的字体
-    fwidth, fheight = font1.size('999')
+    fwidth, fheight = font1.size('999')    # 确定渲染文本所需的空间量
     red = (200, 40, 40)
 
     # 加载资源图片，因为资源文件大小不一，所以做了统一的缩放处理
@@ -92,12 +92,13 @@ def main():
         8: img8
     }
 
-    bgcolor = (225, 225, 225)   # 背景色
+    bgcolor = (225, 225, 225)   # 背景色-灰色
 
     block = MineBlock() # 方块实例化
-    game_status = GameStatus.readied
+    game_status = GameStatus.readied    # 游戏准备好
     start_time = None   # 开始时间
     elapsed_time = 0    # 耗时
+    shortest_time = 999    #最短时间
 
     while True:
         # 填充背景色
@@ -106,8 +107,9 @@ def main():
         for event in pygame.event.get():  # 获得所有事件的列表
             if event.type == QUIT:
                 sys.exit()
-            elif event.type == MOUSEBUTTONDOWN:  # 按下鼠标
-                mouse_x, mouse_y = event.pos
+            elif event.type == MOUSEBUTTONDOWN:
+                """按下鼠标"""
+                mouse_x, mouse_y = event.pos    # 获取坐标
                 x = mouse_x // SIZE
                 y = mouse_y // SIZE - 2
                 b1, b2, b3 = pygame.mouse.get_pressed()  # 获取鼠标三个键的状态
@@ -115,28 +117,32 @@ def main():
                     # 鼠标左右键同时按下，如果已经标记了所有雷，则打开周围一圈
                     # 如果还未标记完所有雷，则有一个周围一圈被同时按下的效果
                     if b1 and b3:
-                        mine = block.getmine(x, y)  # 获取地雷坐标
+                        mine = block.get_mine(x, y)  # 获取地雷坐标
                         if mine.status == BlockStatus.opened:
                             if not block.double_mouse_button_down(x, y):
                                 game_status = GameStatus.over
-            elif event.type == MOUSEBUTTONUP:  # 松开鼠标
-                if y < 0:
+            elif event.type == MOUSEBUTTONUP:
+                """松开鼠标"""
+                if y < 0:   # 在非方块区域
                     # 按下表情图片
                     if face_pos_x <= mouse_x <= face_pos_x + face_size \
                          and face_pos_y <= mouse_y <= face_pos_y + face_size:
                         game_status = GameStatus.readied  # 状态重置
                         block = MineBlock()  # 重新实例化
                         start_time = time.time()  # 返回当前时间的时间戳
+                        if shortest_time > elapsed_time:
+                            shortest_time = elapsed_time
                         elapsed_time = 0
                         continue
 
+                """游戏开始"""
                 if game_status == GameStatus.readied:
                     game_status = GameStatus.started
                     start_time = time.time()
                     elapsed_time = 0
 
                 if game_status == GameStatus.started:
-                    mine = block.getmine(x, y) # 获取地雷坐标
+                    mine = block.get_mine(x, y) # 获取地雷坐标
                     if b1 and not b3:       # 按鼠标左键
                         if mine.status == BlockStatus.normal:
                             if not block.open_mine(x, y):  # 踩到雷了
@@ -180,13 +186,16 @@ def main():
                 elif mine.status == BlockStatus.normal:
                     screen.blit(img_blank, pos)
 
-        print_text(screen, font1, 30, (SIZE * 2 - fheight) // 2 - 2, '%02d' % (MINE_COUNT - flag_count), red)
         # 显示剩余雷数
         # print_text(screen, font, x, y, text, fcolor=(255, 255, 255))
+        print_text(screen, font1, 30, (SIZE * 2 - fheight) // 2, 'mine:%02d' % (MINE_COUNT - flag_count), red)
+        # 显示游戏时间
         if game_status == GameStatus.started:
             elapsed_time = int(time.time() - start_time)
-        print_text(screen, font1, SCREEN_WIDTH - fwidth - 30, (SIZE * 2 - fheight) // 2 - 2, '%03d' % elapsed_time, red)
-        # 显示游戏时间
+        print_text(screen, font1, SCREEN_WIDTH - fwidth - 30, (SIZE * 2 - fheight) // 2, '%03d' % elapsed_time, red)
+        # 显示最短时间
+        print_text(screen, font1, SCREEN_WIDTH - fwidth * 2 - 60, (SIZE * 2 - fheight) // 2, '%03d' % shortest_time, red)
+
 
         if flag_count + opened_count == BLOCK_WIDTH * BLOCK_HEIGHT:
             game_status = GameStatus.win
@@ -203,3 +212,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

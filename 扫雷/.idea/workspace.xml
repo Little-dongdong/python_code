@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c58678c1-fc2c-4b11-a215-534777a791a8" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/../learning_log/.idea/learning_log.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../learning_log/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../learning_log/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../learning_log/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/扫雷/mineblock.py" beforeDir="false" afterPath="$PROJECT_DIR$/扫雷/mineblock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/扫雷/minesweeper.py" beforeDir="false" afterPath="$PROJECT_DIR$/扫雷/minesweeper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,16 +18,16 @@
         <entry file="file://$PROJECT_DIR$/扫雷/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="27">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/扫雷/mineblock.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="675">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/扫雷/minesweeper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="217">
+              <caret line="190" column="70" selection-start-line="190" selection-start-column="70" selection-end-line="190" selection-end-column="70" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -57,14 +54,30 @@
       <find>E:\\Minesweeper\\ui\\</find>
       <find>.\\ui\\</find>
       <find>\\</find>
-      <find>around_mine_count</find>
       <find>event.pos</find>
       <find>get_pressed</find>
+      <find>_x</find>
+      <find>[y][x]</find>
+      <find>getmine</find>
+      <find>around_mine_count</find>
+      <find>_block[j][i]</find>
+      <find>_block[y][x]</find>
+      <find>_block</find>
+      <find>_block[x][y]</find>
+      <find>_block[i][j]</find>
+      <find>opened</find>
+      <find>pos</find>
+      <find>highest_time</find>
+      <find>win</find>
     </findStrings>
     <replaceStrings>
       <replace>.\\ui\\</replace>
       <replace>ui\\</replace>
       <replace>/</replace>
+      <replace>[x][y]</replace>
+      <replace>_block[i][j]</replace>
+      <replace>_block[j][i]</replace>
+      <replace>shortest_time</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -78,16 +91,16 @@
       <list>
         <option value="$PROJECT_DIR$/Minesweeper.py" />
         <option value="$PROJECT_DIR$/扫雷/__init__.py" />
-        <option value="$PROJECT_DIR$/扫雷/minesweeper.py" />
         <option value="$PROJECT_DIR$/扫雷/mineblock.py" />
+        <option value="$PROJECT_DIR$/扫雷/minesweeper.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="499" />
-    <option name="y" value="279" />
-    <option name="width" value="981" />
-    <option name="height" value="975" />
+    <option name="x" value="415" />
+    <option name="y" value="231" />
+    <option name="width" value="819" />
+    <option name="height" value="814" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -199,7 +212,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.14787799" />
@@ -207,15 +220,15 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49933687" weight="0.30691642" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49933687" visible="true" weight="0.17291066" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3299712" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909092" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5006631" side_tool="true" weight="0.30691642" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3299712" />
-      <window_info anchor="bottom" id="调试" order="10" />
+      <window_info anchor="bottom" id="调试" order="10" weight="0.13400577" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -261,6 +274,22 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="shortest_time" language="Python" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>shortest_time</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../alian_invasion/alien.py">
@@ -317,26 +346,40 @@
     <entry file="file://$PROJECT_DIR$/扫雷/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/扫雷/minesweeper.py">
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-6">
+          <caret line="1757" selection-start-line="1757" selection-end-line="1757" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/扫雷/mineblock.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="675">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/扫雷/minesweeper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="190" column="70" selection-start-line="190" selection-start-column="70" selection-end-line="190" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
