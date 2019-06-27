@@ -34,8 +34,10 @@ def main():
     pygame.display.set_caption('扫雷')
 
     font1 = pygame.font.Font('resources/a.TTF', SIZE * 2)  # 得分的字体
+    # font2 = pygame.font.Font('resources/b.TTF', SIZE * 2) # 备用字体(没用上)
     fwidth, fheight = font1.size('999')    # 确定渲染文本所需的空间量
     red = (200, 40, 40)
+    black = (0, 0, 0)
 
     # 加载资源图片，因为资源文件大小不一，所以做了统一的缩放处理
     img0 = pygame.image.load('resources/0.bmp').convert()
@@ -68,7 +70,7 @@ def main():
     img_blood = pygame.transform.smoothscale(img_blood, (SIZE, SIZE))
     img_error = pygame.image.load('resources/error.bmp').convert()
     img_error = pygame.transform.smoothscale(img_error, (SIZE, SIZE))
-    face_size = int(SIZE * 1.25)
+    face_size = int(SIZE * 2)
     img_face_fail = pygame.image.load('resources/face_fail.bmp').convert()
     img_face_fail = pygame.transform.smoothscale(img_face_fail, (face_size, face_size))
     img_face_normal = pygame.image.load('resources/face_normal.bmp').convert()
@@ -76,7 +78,7 @@ def main():
     img_face_success = pygame.image.load('resources/face_success.bmp').convert()
     img_face_success = pygame.transform.smoothscale(img_face_success, (face_size, face_size))
     # 图片左上角的坐标x，y
-    face_pos_x = (SCREEN_WIDTH - face_size) // 2
+    face_pos_x = (SCREEN_WIDTH - face_size) // 2 - 130
     face_pos_y = (SIZE * 2 - face_size) // 2
 
     # 将图片放入一个字典
@@ -130,8 +132,6 @@ def main():
                         game_status = GameStatus.readied  # 状态重置
                         block = MineBlock()  # 重新实例化
                         start_time = time.time()  # 返回当前时间的时间戳
-                        if shortest_time > elapsed_time:
-                            shortest_time = elapsed_time
                         elapsed_time = 0
                         continue
 
@@ -188,13 +188,17 @@ def main():
 
         # 显示剩余雷数
         # print_text(screen, font, x, y, text, fcolor=(255, 255, 255))
-        print_text(screen, font1, 30, (SIZE * 2 - fheight) // 2, 'mine:%02d' % (MINE_COUNT - flag_count), red)
+        print_text(screen, font1, 0, (SIZE * 2 - fheight) // 2, 'mine:', black)
+        print_text(screen, font1, 75, (SIZE * 2 - fheight) // 2, '%02d' % (MINE_COUNT - flag_count), red)
         # 显示游戏时间
         if game_status == GameStatus.started:
             elapsed_time = int(time.time() - start_time)
+        print_text(screen, font1, SCREEN_WIDTH - fwidth - 100, (SIZE * 2 - fheight) // 2, 'time:', black)
         print_text(screen, font1, SCREEN_WIDTH - fwidth - 30, (SIZE * 2 - fheight) // 2, '%03d' % elapsed_time, red)
         # 显示最短时间
-        print_text(screen, font1, SCREEN_WIDTH - fwidth * 2 - 60, (SIZE * 2 - fheight) // 2, '%03d' % shortest_time, red)
+        print_text(screen, font1, SCREEN_WIDTH - fwidth * 2 - 270, (SIZE * 2 - fheight) // 2, 'shortest:',
+                   black)
+        print_text(screen, font1, SCREEN_WIDTH - fwidth * 2 - 120, (SIZE * 2 - fheight) // 2, '%03d' % shortest_time, red)
 
 
         if flag_count + opened_count == BLOCK_WIDTH * BLOCK_HEIGHT:
@@ -204,6 +208,8 @@ def main():
             screen.blit(img_face_fail, (face_pos_x, face_pos_y))
         elif game_status == GameStatus.win:
             screen.blit(img_face_success, (face_pos_x, face_pos_y))
+            if shortest_time > elapsed_time:
+                shortest_time = elapsed_time
         else:
             screen.blit(img_face_normal, (face_pos_x, face_pos_y))
 

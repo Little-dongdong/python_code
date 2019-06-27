@@ -5,7 +5,7 @@ from enum import Enum  # 引入枚举类型
 BLOCK_WIDTH = 30    # 横向块数
 BLOCK_HEIGHT = 16   # 纵向块数
 SIZE = 20           # 块大小(像素点)
-MINE_COUNT = 2    # 地雷数
+MINE_COUNT = 40    # 地雷数
 
 
 class BlockStatus(Enum):
@@ -108,6 +108,7 @@ class MineBlock:
 
         around = _get_around(x, y)
 
+        # 统计周围雷数
         _sum = 0
         for i, j in around:
             if self._block[j][i].value:
@@ -118,7 +119,7 @@ class MineBlock:
         # 这就能实现一点出现一大片打开的效果了
         if _sum == 0:
             for i, j in around:
-                if self._block[j][i].around_mine_count == -1:
+                if self._block[j][i].around_mine_count == -1:  # 未点击的方块
                     self.open_mine(i, j)
 
         return True
@@ -137,17 +138,18 @@ class MineBlock:
             if self._block[j][i].status == BlockStatus.flag:
                 sumflag += 1
 
-        # 周边的雷已经全部被标记
+        # 周边的雷已经被标记
         result = True
         if sumflag == self._block[y][x].around_mine_count:
+            # 快速打开周围方块
             for i, j in around:
                 if self._block[j][i].status == BlockStatus.normal:
-                    if not self.open_mine(i, j):
+                    if not self.open_mine(i, j):  # 踩雷
                         result = False
         else:
             for i, j in around:
                 if self._block[j][i].status == BlockStatus.normal:
-                    self._block[j][i].status = BlockStatus.hint
+                    self._block[j][i].status = BlockStatus.hint  # 紧接下面
         return result
 
     def double_mouse_button_up(self, x, y):
